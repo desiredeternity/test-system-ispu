@@ -6,12 +6,12 @@
 
 std::string run_with_input(std::string input);
 
-std::vector<double> dfromstr(std::string string);
+std::vector<double> dfromstr(std::string str);
 
-void test_exact(std::string input, std::string expected_output);
+void test_exact(std::string input, std::string expected);
 
-void test_num_array(std::string input, std::string expected_output);
+void test_num_array(std::string input, std::string expected);
 
-void test_contains(std::string input, std::string expected_output);
+void test_contains(std::string input, std::string expected);
 
 #endif

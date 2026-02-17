@@ -2,32 +2,32 @@
 
 using namespace std;
 
-void test1(string input, string expected_output) {
-    test_num_array(input, expected_output);
+void test1(string input, string expected) {
+    test_num_array(input, expected);
 }
 
-void test2(string input, string expected_output) {
-    test_exact(input, expected_output);
+void test2(string input, string expected) {
+    test_exact(input, expected);
 }
 
-void test3(string input, string expected_output) {
-    test_exact(input, expected_output);
+void test3(string input, string expected) {
+    test_exact(input, expected);
 }
 
-void test4(string input, string expected_output) {
-    test_num_array(input, expected_output);
+void test4(string input, string expected) {
+    test_num_array(input, expected);
 }
 
-void test5(string input, string expected_output) {
-    test_exact(input, expected_output);
+void test5(string input, string expected) {
+    test_exact(input, expected);
 }
 
-void test6(string input, string expected_output) {
-    test_num_array(input, expected_output);
+void test6(string input, string expected) {
+    test_num_array(input, expected);
 }
 
-void test7(string input, string expected_output) {
-    test_contains(input, expected_output);
+void test7(string input, string expected) {
+    test_contains(input, expected);
 }
 
 int main() {
