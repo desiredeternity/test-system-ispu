@@ -2,72 +2,72 @@
 
 using namespace std;
 
-void test1(string input, string expected_output) {
-    test_exact(input, expected_output);
+void test1(string input, string expected) {
+    test_exact(input, expected);
 }
 
-void test2(string input, string expected_output) {
-    test_exact(input, expected_output);
+void test2(string input, string expected) {
+    test_exact(input, expected);
 }
 
-void test3(string input, string expected_output) {
-    test_exact(input, expected_output);
+void test3(string input, string expected) {
+    test_exact(input, expected);
 }
 
-void test4(string input, string expected_output) {
-    test_exact(input, expected_output);
+void test4(string input, string expected) {
+    test_exact(input, expected);
 }
 
-void test5(string input, string expected_output) {
-    test_exact(input, expected_output);
+void test5(string input, string expected) {
+    test_exact(input, expected);
 }
 
-void test6(string input, string expected_output) {
-    test_exact(input, expected_output);
+void test6(string input, string expected) {
+    test_exact(input, expected);
 }
 
-void test7(string input, string expected_output) {
-    test_exact(input, expected_output);
+void test7(string input, string expected) {
+    test_exact(input, expected);
 }
 
-void test8(string input, string expected_output) {
-    test_exact(input, expected_output);
+void test8(string input, string expected) {
+    test_exact(input, expected);
 }
 
-void test9(string input, string expected_output) {
-    test_exact(input, expected_output);
+void test9(string input, string expected) {
+    test_exact(input, expected);
 }
 
-void test10(string input, string expected_output) {
-    test_exact(input, expected_output);
+void test10(string input, string expected) {
+    test_exact(input, expected);
 }
 
-void test11(string input, string expected_output) {
-    test_exact(input, expected_output);
+void test11(string input, string expected) {
+    test_exact(input, expected);
 }
 
-void test12(string input, string expected_output) {
-    test_exact(input, expected_output);
+void test12(string input, string expected) {
+    test_exact(input, expected);
 }
 
-void test13(string input, string expected_output) {
-    test_exact(input, expected_output);
+void test13(string input, string expected) {
+    test_exact(input, expected);
 }
 
-void test14(string input, string expected_output) {
-    test_exact(input, expected_output);
+void test14(string input, string expected) {
+    test_exact(input, expected);
 }
 
-void test15(string input, string expected_output) {
-    test_exact(input, expected_output);
+void test15(string input, string expected) {
+    test_exact(input, expected);
 }
 
-void test16(string input, string expected_output) {
-    test_exact(input, expected_output);
+void test16(string input, string expected) {
+    test_exact(input, expected);
 }
 
-void test17(string input, string expected_output) {
-    test_exact(input, expected_output);
+void test17(string input, string expected) {
+    test_exact(input, expected);
 }
 
 int main() {

@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void test1(string input, string expected_output) {
+void test1(string input, string expected) {
     string result = run_with_input(input);
 
     if (result.find("зел") != string::npos && result.find("крыс") != string::npos) {
@@ -11,13 +11,13 @@ void test1(string input, string expected_output) {
     }
     else {
         cout << "Тест: " << "ОШИБКА: ";
-        cout << "ожидалось \'" << expected_output << "\', ";
+        cout << "ожидалось \'" << expected << "\', ";
         cout << "получено \'" << result << "\', ";
         cout << "введено \'" << input << "\'\n";
     }
 }
 
-void test2(string input, string expected_output) {
+void test2(string input, string expected) {
     string result = run_with_input(input);
 
     if (result.find("бел") != string::npos && result.find("зме") != string::npos) {
@@ -25,13 +25,13 @@ void test2(string input, string expected_output) {
     }
     else {
         cout << "Тест: " << "ОШИБКА: ";
-        cout << "ожидалось \'" << expected_output << "\', ";
+        cout << "ожидалось \'" << expected << "\', ";
         cout << "получено \'" << result << "\', ";
         cout << "введено \'" << input << "\'\n";
     }
 }
 
-void test3(string input, string expected_output) {
+void test3(string input, string expected) {
     string result = run_with_input(input);
 
     if ((result.find("жел") != string::npos || result.find("жёл") != string::npos)
@@ -40,13 +40,13 @@ void test3(string input, string expected_output) {
     }
     else {
         cout << "Тест: " << "ОШИБКА: ";
-        cout << "ожидалось \'" << expected_output << "\', ";
+        cout << "ожидалось \'" << expected << "\', ";
         cout << "получено \'" << result << "\', ";
         cout << "введено \'" << input << "\'\n";
     }
 }
 
-void test4(string input, string expected_output) {
+void test4(string input, string expected) {
     string result = run_with_input(input);
 
     if (result.find("зел") != string::npos && result.find("свин") != string::npos) {
@@ -54,13 +54,13 @@ void test4(string input, string expected_output) {
     }
     else {
         cout << "Тест: " << "ОШИБКА: ";
-        cout << "ожидалось \'" << expected_output << "\', ";
+        cout << "ожидалось \'" << expected << "\', ";
         cout << "получено \'" << result << "\', ";
         cout << "введено \'" << input << "\'\n";
     }
 }
 
-void test5(string input, string expected_output) {
+void test5(string input, string expected) {
     string result = run_with_input(input);
 
     if ((result.find("чер") != string::npos || result.find("чёр") != string::npos)
@@ -69,13 +69,13 @@ void test5(string input, string expected_output) {
     }
     else {
         cout << "Тест: " << "ОШИБКА: ";
-        cout << "ожидалось \'" << expected_output << "\', ";
+        cout << "ожидалось \'" << expected << "\', ";
         cout << "получено \'" << result << "\', ";
         cout << "введено \'" << input << "\'\n";
     }
 }
 
-void test6(string input, string expected_output) {
+void test6(string input, string expected) {
     string result = run_with_input(input);
 
     if (result.find("зел") != string::npos && result.find("крыс") != string::npos) {
@@ -83,14 +83,14 @@ void test6(string input, string expected_output) {
     }
     else {
         cout << "Тест: " << "ОШИБКА: ";
-        cout << "ожидалось \'" << expected_output << "\', ";
+        cout << "ожидалось \'" << expected << "\', ";
         cout << "получено \'" << result << "\', ";
         cout << "введено \'" << input << "\'\n";
     }
 }
 
-void test7(string input, string expected_output) {
-    test_contains(input, expected_output);
+void test7(string input, string expected) {
+    test_contains(input, expected);
 }
 
 int main() {

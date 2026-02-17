@@ -63,38 +63,38 @@ vector<double> dfromstr(string str) {
     return numbers;
 }
 
-void test_exact(string input, string expected_output) { // Тестирование на полное сходство ожидаемого и реального вывода программы
+void test_exact(string input, string expected) { // Тестирование на полное сходство ожидаемого и реального вывода программы
     string result = run_with_input(input);
 
-    if (result == expected_output) {
+    if (result == expected) {
         cout << "Тест: " << "ПРОЙДЕН\n";
     }
     else {
         cout << "Тест: " << "ОШИБКА: ";
-        cout << "ожидалось \'" << expected_output << "\', ";
+        cout << "ожидалось \'" << expected << "\', ";
         cout << "получено \'" << result << "\', ";
         cout << "введено \'" << input << "\'\n";
     }
 
 }
 
-void test_num_array(string input, string expected_output) { // Тестирование на наличие необходимых чисел в выводе программы, порядок не важен
+void test_num_array(string input, string expected) { // Тестирование на наличие необходимых чисел в выводе программы, порядок не важен
     string result = run_with_input(input);
     vector<double> num_result = dfromstr(result);
-    vector<double> num_expected_output = dfromstr(expected_output);
+    vector<double> num_expected = dfromstr(expected);
 
     sort(num_result.begin(), num_result.end());
-    sort(num_expected_output.begin(), num_expected_output.end());
+    sort(num_expected.begin(), num_expected.end());
 
-    if (num_result == num_expected_output) {
+    if (num_result == num_expected) {
         cout << "Тест: " << "ПРОЙДЕН\n";
     }
     else {
         cout << "Тест: " << "ОШИБКА: ";
         cout << "ожидалось \'";
-        for (size_t i = 0; i < num_expected_output.size(); i++) {
+        for (size_t i = 0; i < num_expected.size(); i++) {
             if (i > 0) cout << " ";
-            cout << num_expected_output[i];
+            cout << num_expected[i];
         }
         cout <<"\', ";
         cout << "получено \'";
@@ -107,15 +107,15 @@ void test_num_array(string input, string expected_output) { // Тестиров�
     }
 }
 
-void test_contains(std::string input, std::string expected_output) { // Тестирование на наличие определённой подстроки в выводе программы
+void test_contains(std::string input, std::string expected) { // Тестирование на наличие определённой подстроки в выводе программы
     string result = run_with_input(input);
 
-    if (result.find(expected_output) != string::npos) {
+    if (result.find(expected) != string::npos) {
         cout << "Тест: " << "ПРОЙДЕН\n";
     }
     else {
         cout << "Тест: " << "ОШИБКА: ";
-        cout << "ожидалось \'" << expected_output << "\', ";
+        cout << "ожидалось \'" << expected << "\', ";
         cout << "получено \'" << result << "\', ";
         cout << "введено \'" << input << "\'\n";
     }
