@@ -89,10 +89,6 @@ void test6(string input, string expected) {
     }
 }
 
-void test7(string input, string expected) {
-    test_contains(input, expected);
-}
-
 int main() {
     test1("1984", "Год зеленой крысы");
     test2("1785", "Год белой змеи");
@@ -100,7 +96,7 @@ int main() {
     test4("1995", "Год зеленой свиньи");
     test5("0",    "Год черной обезьяны");
     test6("2044", "Год зеленой крысы");
-    test7("-1",   "Ошибка");
+    test_contains("-1",   "Ошибка");
 
     return 0;
 }
