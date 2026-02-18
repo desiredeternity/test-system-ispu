@@ -6,13 +6,33 @@
 #include <streambuf>
 #include <vector>
 
+#define BUFFER_SIZE 1024
+
 using namespace std;
 
 extern int user_main();
 
-string run_with_input(string input) { // Запуск программы пользователя с определёнными входными данными
+string run_with_input(string input) { // Запуск программы пользователя с определёнными входными данными. Используется перенаправление потоков cin/cout и stdin/stdout
     streambuf* original_cin = cin.rdbuf();
     streambuf* original_cout = cout.rdbuf();
+
+    FILE* original_stdin = stdin;
+    FILE* original_stdout = stdout;
+
+    FILE* temp_input = tmpfile();
+    FILE* temp_output = tmpfile();
+    
+    if (!temp_input || !temp_output) {
+        if (temp_input) fclose(temp_input);
+        if (temp_output) fclose(temp_output);
+        return "Ошибка создания временных файлов";
+    }
+
+    fwrite(input.c_str(), 1, input.size(), temp_input);
+    rewind(temp_input);
+
+    stdin = temp_input;
+    stdout = temp_output;
     
     stringstream input_buffer;
     stringstream output_buffer;
@@ -22,28 +42,68 @@ string run_with_input(string input) { // Запуск программы пол�
 
     input_buffer << input;
 
+    string result;
+
     try {
         user_main();
+
+        result = output_buffer.str();
+
+        fflush(temp_output);
+        rewind(temp_output);
+
+        char buffer[BUFFER_SIZE];
+        size_t bytes_read;
+        string c_output;
+        
+        while ((bytes_read = fread(buffer, 1, sizeof(buffer) - 1, temp_output)) > 0) {
+            buffer[bytes_read] = '\0';
+            c_output += buffer;
+        }
+
+        if (!c_output.empty()) {
+            if (result.empty()) {
+                result = c_output;
+            } else {
+                result = c_output + result;
+            }
+        }
     }
     catch (const exception &e) {
+        stdin = original_stdin;
+        stdout = original_stdout;
+
         cin.rdbuf(original_cin);
         cout.rdbuf(original_cout);
+
+        fclose(temp_input);
+        fclose(temp_output);
 
         return "Исключение: " + string(e.what());
     }
     catch (...) {
+        stdin = original_stdin;
+        stdout = original_stdout;
+
         cin.rdbuf(original_cin);
         cout.rdbuf(original_cout);
+
+        fclose(temp_input);
+        fclose(temp_output);
         
         return "Неизвестное исключение";
     }
 
-    string result = output_buffer.str();
+    stdin = original_stdin;
+    stdout = original_stdout;
 
     cin.rdbuf(original_cout);
     cout.rdbuf(original_cout);
 
-    if (result.back() == '\n') {
+    fclose(temp_input);
+    fclose(temp_output);
+
+    if (result.back() == '\n' || result.back() == ' ') {
         result.pop_back();
     }
 
