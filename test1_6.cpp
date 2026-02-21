@@ -1,7 +1,5 @@
 #include "iotest.hpp"
 
-using namespace std;
-
 int main() {
     test_exact("3 0 4 90 5 180",      "Нельзя построить треугольник");
     test_exact("5 0 5 120 5 240",     "Можно построить треугольник");

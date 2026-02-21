@@ -1,7 +1,5 @@
 #include "iotest.hpp"
 
-using namespace std;
-
 int main() {
     test_num_array("1 -5 4",  "-2 -1 1 2");
     test_exact("1 0 1",       "Корней нет");

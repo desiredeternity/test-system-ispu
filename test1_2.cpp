@@ -1,7 +1,5 @@
 #include "iotest.hpp"
 
-using namespace std;
-
 int main() {
     test_exact("1 0 5 0 1 3",    "5 3");
     test_exact("1 2 3 1 0 0",    "0 1.5");

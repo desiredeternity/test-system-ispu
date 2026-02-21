@@ -1,7 +1,5 @@
 #include "iotest.hpp"
 
-using namespace std;
-
 int main() {
     test_exact("5 5 7",       "равнобедренный, остроугольный");
     test_exact("6 6 4",       "равнобедренный, остроугольный");
