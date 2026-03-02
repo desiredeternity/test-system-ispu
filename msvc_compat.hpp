@@ -2,9 +2,14 @@
 #define MSVC_COMPAT_HPP
 
 #include <cstdio>
+#include <cstdint>      // Альтернативно можно использовать этот
 
 typedef int errno_t;
-typedef size_t rsize_t;
+typedef std::size_t rsize_t;
+
+#ifndef RSIZE_MAX
+#define RSIZE_MAX (SIZE_MAX >> 1)
+#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -29,6 +34,10 @@ char* gets_s(char* buffer, rsize_t buffer_size);
 
 errno_t memcpy_s(void* dest, rsize_t dest_size, const void* src, rsize_t count);
 errno_t memmove_s(void* dest, rsize_t dest_size, const void* src, rsize_t count);
+
+#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_NONSTDC_NO_WARNINGS
+#define _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES 1
 
 #ifdef __cplusplus
 }
