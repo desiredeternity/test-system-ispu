@@ -1,8 +1,10 @@
+#pragma once
+
 #ifndef MSVC_COMPAT_HPP
 #define MSVC_COMPAT_HPP
 
 #include <cstdio>
-#include <cstdint>      // Альтернативно можно использовать этот
+#include <cstdint>
 
 typedef int errno_t;
 typedef std::size_t rsize_t;
