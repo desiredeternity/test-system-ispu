@@ -6,97 +6,97 @@ using namespace std;
 void test1(string input, string expected) {
     string result = run_with_input(input);
 
-    if (result.find("–∑–µ–ª") != string::npos && result.find("–∫—Ä—ã—Å") != string::npos) {
-        cout << "–¢–µ—Å—Ç: " << "–ü–†–û–ô–î–ï–ù\n";
+    if (result.find("ÁÂÎ") != string::npos && result.find("Í˚Ò") != string::npos) {
+        cout << "“ÂÒÚ: " << "œ–Œ…ƒ≈Õ\n";
     }
     else {
-        cout << "–¢–µ—Å—Ç: " << "–û–®–ò–ë–ö–ê: ";
-        cout << "–æ–∂–∏–¥–∞–ª–æ—Å—å \'" << expected << "\', ";
-        cout << "–ø–æ–ª—É—á–µ–Ω–æ \'" << result << "\', ";
-        cout << "–≤–≤–µ–¥–µ–Ω–æ \'" << input << "\'\n";
+        cout << "“ÂÒÚ: " << "Œÿ»¡ ¿: ";
+        cout << "ÓÊË‰‡ÎÓÒ¸ \'" << expected << "\', ";
+        cout << "ÔÓÎÛ˜ÂÌÓ \'" << result << "\', ";
+        cout << "‚‚Â‰ÂÌÓ \'" << input << "\'\n";
     }
 }
 
 void test2(string input, string expected) {
     string result = run_with_input(input);
 
-    if (result.find("–±–µ–ª") != string::npos && result.find("–∑–º–µ") != string::npos) {
-        cout << "–¢–µ—Å—Ç: " << "–ü–†–û–ô–î–ï–ù\n";
+    if (result.find("·ÂÎ") != string::npos && result.find("ÁÏÂ") != string::npos) {
+        cout << "“ÂÒÚ: " << "œ–Œ…ƒ≈Õ\n";
     }
     else {
-        cout << "–¢–µ—Å—Ç: " << "–û–®–ò–ë–ö–ê: ";
-        cout << "–æ–∂–∏–¥–∞–ª–æ—Å—å \'" << expected << "\', ";
-        cout << "–ø–æ–ª—É—á–µ–Ω–æ \'" << result << "\', ";
-        cout << "–≤–≤–µ–¥–µ–Ω–æ \'" << input << "\'\n";
+        cout << "“ÂÒÚ: " << "Œÿ»¡ ¿: ";
+        cout << "ÓÊË‰‡ÎÓÒ¸ \'" << expected << "\', ";
+        cout << "ÔÓÎÛ˜ÂÌÓ \'" << result << "\', ";
+        cout << "‚‚Â‰ÂÌÓ \'" << input << "\'\n";
     }
 }
 
 void test3(string input, string expected) {
     string result = run_with_input(input);
 
-    if ((result.find("–∂–µ–ª") != string::npos || result.find("–∂—ë–ª") != string::npos)
-      && result.find("–∫—Ä—ã—Å") != string::npos) {
-        cout << "–¢–µ—Å—Ç: " << "–ü–†–û–ô–î–ï–ù\n";
+    if ((result.find("ÊÂÎ") != string::npos || result.find("Ê∏Î") != string::npos)
+      && result.find("Í˚Ò") != string::npos) {
+        cout << "“ÂÒÚ: " << "œ–Œ…ƒ≈Õ\n";
     }
     else {
-        cout << "–¢–µ—Å—Ç: " << "–û–®–ò–ë–ö–ê: ";
-        cout << "–æ–∂–∏–¥–∞–ª–æ—Å—å \'" << expected << "\', ";
-        cout << "–ø–æ–ª—É—á–µ–Ω–æ \'" << result << "\', ";
-        cout << "–≤–≤–µ–¥–µ–Ω–æ \'" << input << "\'\n";
+        cout << "“ÂÒÚ: " << "Œÿ»¡ ¿: ";
+        cout << "ÓÊË‰‡ÎÓÒ¸ \'" << expected << "\', ";
+        cout << "ÔÓÎÛ˜ÂÌÓ \'" << result << "\', ";
+        cout << "‚‚Â‰ÂÌÓ \'" << input << "\'\n";
     }
 }
 
 void test4(string input, string expected) {
     string result = run_with_input(input);
 
-    if (result.find("–∑–µ–ª") != string::npos && result.find("—Å–≤–∏–Ω") != string::npos) {
-        cout << "–¢–µ—Å—Ç: " << "–ü–†–û–ô–î–ï–ù\n";
+    if (result.find("ÁÂÎ") != string::npos && result.find("Ò‚ËÌ") != string::npos) {
+        cout << "“ÂÒÚ: " << "œ–Œ…ƒ≈Õ\n";
     }
     else {
-        cout << "–¢–µ—Å—Ç: " << "–û–®–ò–ë–ö–ê: ";
-        cout << "–æ–∂–∏–¥–∞–ª–æ—Å—å \'" << expected << "\', ";
-        cout << "–ø–æ–ª—É—á–µ–Ω–æ \'" << result << "\', ";
-        cout << "–≤–≤–µ–¥–µ–Ω–æ \'" << input << "\'\n";
+        cout << "“ÂÒÚ: " << "Œÿ»¡ ¿: ";
+        cout << "ÓÊË‰‡ÎÓÒ¸ \'" << expected << "\', ";
+        cout << "ÔÓÎÛ˜ÂÌÓ \'" << result << "\', ";
+        cout << "‚‚Â‰ÂÌÓ \'" << input << "\'\n";
     }
 }
 
 void test5(string input, string expected) {
     string result = run_with_input(input);
 
-    if ((result.find("—á–µ—Ä") != string::npos || result.find("—á—ë—Ä") != string::npos)
-      && result.find("–æ–±–µ–∑") != string::npos) {
-        cout << "–¢–µ—Å—Ç: " << "–ü–†–û–ô–î–ï–ù\n";
+    if ((result.find("˜Â") != string::npos || result.find("˜∏") != string::npos)
+      && result.find("Ó·ÂÁ") != string::npos) {
+        cout << "“ÂÒÚ: " << "œ–Œ…ƒ≈Õ\n";
     }
     else {
-        cout << "–¢–µ—Å—Ç: " << "–û–®–ò–ë–ö–ê: ";
-        cout << "–æ–∂–∏–¥–∞–ª–æ—Å—å \'" << expected << "\', ";
-        cout << "–ø–æ–ª—É—á–µ–Ω–æ \'" << result << "\', ";
-        cout << "–≤–≤–µ–¥–µ–Ω–æ \'" << input << "\'\n";
+        cout << "“ÂÒÚ: " << "Œÿ»¡ ¿: ";
+        cout << "ÓÊË‰‡ÎÓÒ¸ \'" << expected << "\', ";
+        cout << "ÔÓÎÛ˜ÂÌÓ \'" << result << "\', ";
+        cout << "‚‚Â‰ÂÌÓ \'" << input << "\'\n";
     }
 }
 
 void test6(string input, string expected) {
     string result = run_with_input(input);
 
-    if (result.find("–∑–µ–ª") != string::npos && result.find("–∫—Ä—ã—Å") != string::npos) {
-        cout << "–¢–µ—Å—Ç: " << "–ü–†–û–ô–î–ï–ù\n";
+    if (result.find("ÁÂÎ") != string::npos && result.find("Í˚Ò") != string::npos) {
+        cout << "“ÂÒÚ: " << "œ–Œ…ƒ≈Õ\n";
     }
     else {
-        cout << "–¢–µ—Å—Ç: " << "–û–®–ò–ë–ö–ê: ";
-        cout << "–æ–∂–∏–¥–∞–ª–æ—Å—å \'" << expected << "\', ";
-        cout << "–ø–æ–ª—É—á–µ–Ω–æ \'" << result << "\', ";
-        cout << "–≤–≤–µ–¥–µ–Ω–æ \'" << input << "\'\n";
+        cout << "“ÂÒÚ: " << "Œÿ»¡ ¿: ";
+        cout << "ÓÊË‰‡ÎÓÒ¸ \'" << expected << "\', ";
+        cout << "ÔÓÎÛ˜ÂÌÓ \'" << result << "\', ";
+        cout << "‚‚Â‰ÂÌÓ \'" << input << "\'\n";
     }
 }
 
 int main() {
-    test1("1984", "–ì–æ–¥ –∑–µ–ª–µ–Ω–æ–π –∫—Ä—ã—Å—ã");
-    test2("1785", "–ì–æ–¥ –±–µ–ª–æ–π –∑–º–µ–∏");
-    test3("1996", "–ì–æ–¥ –∂–µ–ª—Ç–æ–π –∫—Ä—ã—Å—ã");
-    test4("1995", "–ì–æ–¥ –∑–µ–ª–µ–Ω–æ–π —Å–≤–∏–Ω—å–∏");
-    test5("0",    "–ì–æ–¥ —á–µ—Ä–Ω–æ–π –æ–±–µ–∑—å—è–Ω—ã");
-    test6("2044", "–ì–æ–¥ –∑–µ–ª–µ–Ω–æ–π –∫—Ä—ã—Å—ã");
-    test_contains("-1",   "–û—à–∏–±–∫–∞");
+    test1("1984", "√Ó‰ ÁÂÎÂÌÓÈ Í˚Ò˚");
+    test2("1785", "√Ó‰ ·ÂÎÓÈ ÁÏÂË");
+    test3("1996", "√Ó‰ ÊÂÎÚÓÈ Í˚Ò˚");
+    test4("1995", "√Ó‰ ÁÂÎÂÌÓÈ Ò‚ËÌ¸Ë");
+    test5("0",    "√Ó‰ ˜ÂÌÓÈ Ó·ÂÁ¸ˇÌ˚");
+    test6("2044", "√Ó‰ ÁÂÎÂÌÓÈ Í˚Ò˚");
+    test_contains("-1",   "Œ¯Ë·Í‡");
 
     return 0;
 }
