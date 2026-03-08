@@ -10,7 +10,7 @@
 
 extern int user_main();
 
-std::string run_with_input(std::string input) { // Запуск программы пользователя с определёнными входными данными. Используется перенаправление потоков cin/cout и stdin/stdout
+std::string run_with_input(std::string input) { // Р—Р°РїСѓСЃРє РїСЂРѕРіСЂР°РјРјС‹ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ СЃ РѕРїСЂРµРґРµР»С‘РЅРЅС‹РјРё РІС…РѕРґРЅС‹РјРё РґР°РЅРЅС‹РјРё. РСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РїРµСЂРµРЅР°РїСЂР°РІР»РµРЅРёРµ РїРѕС‚РѕРєРѕРІ cin/cout Рё stdin/stdout
     std::streambuf* original_cin = std::cin.rdbuf();
     std::streambuf* original_cout = std::cout.rdbuf();
 
@@ -23,7 +23,7 @@ std::string run_with_input(std::string input) { // Запуск программы пользователя
     if (!temp_input || !temp_output) {
         if (temp_input) fclose(temp_input);
         if (temp_output) fclose(temp_output);
-        return "Ошибка создания временных файлов";
+        return "РћС€РёР±РєР° СЃРѕР·РґР°РЅРёСЏ РІСЂРµРјРµРЅРЅС‹С… С„Р°Р№Р»РѕРІ";
     }
 
     fwrite(input.c_str(), 1, input.size(), temp_input);
@@ -77,7 +77,7 @@ std::string run_with_input(std::string input) { // Запуск программы пользователя
         fclose(temp_input);
         fclose(temp_output);
 
-        return "Исключение: " + std::string(e.what());
+        return "РСЃРєР»СЋС‡РµРЅРёРµ: " + std::string(e.what());
     }
     catch (...) {
         stdin = original_stdin;
@@ -89,7 +89,7 @@ std::string run_with_input(std::string input) { // Запуск программы пользователя
         fclose(temp_input);
         fclose(temp_output);
         
-        return "Неизвестное исключение";
+        return "РќРµРёР·РІРµСЃС‚РЅРѕРµ РёСЃРєР»СЋС‡РµРЅРёРµ";
     }
 
     stdin = original_stdin;
@@ -121,22 +121,22 @@ std::vector<double> dfromstr(std::string str) {
     return numbers;
 }
 
-void test_exact(std::string input, std::string expected) { // Тестирование на полное сходство ожидаемого и реального вывода программы
+void test_exact(std::string input, std::string expected) { // РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РЅР° РїРѕР»РЅРѕРµ СЃС…РѕРґСЃС‚РІРѕ РѕР¶РёРґР°РµРјРѕРіРѕ Рё СЂРµР°Р»СЊРЅРѕРіРѕ РІС‹РІРѕРґР° РїСЂРѕРіСЂР°РјРјС‹
     std::string result = run_with_input(input);
 
     if (result == expected) {
-        std::cout << "Тест: " << "ПРОЙДЕН\n";
+        std::cout << "РўРµСЃС‚: " << "РџР РћР™Р”Р•Рќ\n";
     }
     else {
-        std::cout << "Тест: " << "ОШИБКА: ";
-        std::cout << "ожидалось \'" << expected << "\', ";
-        std::cout << "получено \'" << result << "\', ";
-        std::cout << "введено \'" << input << "\'\n";
+        std::cout << "РўРµСЃС‚: " << "РћРЁРР‘РљРђ: ";
+        std::cout << "РѕР¶РёРґР°Р»РѕСЃСЊ \'" << expected << "\', ";
+        std::cout << "РїРѕР»СѓС‡РµРЅРѕ \'" << result << "\', ";
+        std::cout << "РІРІРµРґРµРЅРѕ \'" << input << "\'\n";
     }
 
 }
 
-void test_num_array(std::string input, std::string expected) { // Тестирование на наличие необходимых чисел в выводе программы, порядок не важен
+void test_num_array(std::string input, std::string expected) { // РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РЅР° РЅР°Р»РёС‡РёРµ РЅРµРѕР±С…РѕРґРёРјС‹С… С‡РёСЃРµР» РІ РІС‹РІРѕРґРµ РїСЂРѕРіСЂР°РјРјС‹, РїРѕСЂСЏРґРѕРє РЅРµ РІР°Р¶РµРЅ
     std::string result = run_with_input(input);
     std::vector<double> num_result = dfromstr(result);
     std::vector<double> num_expected = dfromstr(expected);
@@ -145,36 +145,36 @@ void test_num_array(std::string input, std::string expected) { // Тестирование н
     std::sort(num_expected.begin(), num_expected.end());
 
     if (num_result == num_expected) {
-        std::cout << "Тест: " << "ПРОЙДЕН\n";
+        std::cout << "РўРµСЃС‚: " << "РџР РћР™Р”Р•Рќ\n";
     }
     else {
-        std::cout << "Тест: " << "ОШИБКА: ";
-        std::cout << "ожидалось \'";
+        std::cout << "РўРµСЃС‚: " << "РћРЁРР‘РљРђ: ";
+        std::cout << "РѕР¶РёРґР°Р»РѕСЃСЊ \'";
         for (size_t i = 0; i < num_expected.size(); i++) {
             if (i > 0) std::cout << " ";
             std::cout << num_expected[i];
         }
         std::cout <<"\', ";
-        std::cout << "получено \'";
+        std::cout << "РїРѕР»СѓС‡РµРЅРѕ \'";
         for (size_t i = 0; i < num_result.size(); i++) {
             if (i > 0) std::cout << " ";
             std::cout << num_result[i];
         }
         std::cout <<"\', ";
-        std::cout << "введено \'" << input << "\'\n";
+        std::cout << "РІРІРµРґРµРЅРѕ \'" << input << "\'\n";
     }
 }
 
-void test_contains(std::string input, std::string expected) { // Тестирование на наличие определённой подстроки в выводе программы
+void test_contains(std::string input, std::string expected) { // РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РЅР° РЅР°Р»РёС‡РёРµ РѕРїСЂРµРґРµР»С‘РЅРЅРѕР№ РїРѕРґСЃС‚СЂРѕРєРё РІ РІС‹РІРѕРґРµ РїСЂРѕРіСЂР°РјРјС‹
     std::string result = run_with_input(input);
 
     if (result.find(expected) != std::string::npos) {
-        std::cout << "Тест: " << "ПРОЙДЕН\n";
+        std::cout << "РўРµСЃС‚: " << "РџР РћР™Р”Р•Рќ\n";
     }
     else {
-        std::cout << "Тест: " << "ОШИБКА: ";
-        std::cout << "ожидалось \'" << expected << "\', ";
-        std::cout << "получено \'" << result << "\', ";
-        std::cout << "введено \'" << input << "\'\n";
+        std::cout << "РўРµСЃС‚: " << "РћРЁРР‘РљРђ: ";
+        std::cout << "РѕР¶РёРґР°Р»РѕСЃСЊ \'" << expected << "\', ";
+        std::cout << "РїРѕР»СѓС‡РµРЅРѕ \'" << result << "\', ";
+        std::cout << "РІРІРµРґРµРЅРѕ \'" << input << "\'\n";
     }
 }
