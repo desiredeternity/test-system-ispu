@@ -1,4 +1,12 @@
-g++ -Dmain=user_main -c user_code.cpp -o user_code.o
+Компиляция с тестированием:
+g++ -c msvc_compat.cpp -o msvc_compat.o
+g++ -c Windows.cpp -o Windows.o
+g++ -I/root/test/ -Dmain=user_main -include msvc_compat.hpp -include common_headers.hpp -c -w user_code.cpp -o user_code.o
 g++ -c iotest.cpp -o iotest.o
 g++ -c testX_X.cpp -o testX_X.o
-g++ user_code.o iotest.o testX_X.o -o tester.out
+g++ user_code.o iotest.o testX_X.o msvc_compat.o Windows.o -o tester.out
+
+Отдельная компиляция кода пользователя:
+g++ -c msvc_compat.cpp -o msvc_compat.o
+g++ -c Windows.cpp -o Windows.o
+g++ -I/root/test/ -include msvc_compat.hpp -include common_headers.hpp -w user_code.cpp msvc_compat.o Windows.o -o user_code.out

@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef IOTEST_H
 #define IOTEST_H
 
