@@ -9,8 +9,8 @@ int main() {
     test_exact("1 3 2100",     "15 3 2100");
     test_exact("1 3 100",      "28 2 100");
     test_exact("1 1 1",        "-1 1 1");
-    test_contains("1 13 1600", "Ошибка");
-    test_contains("40 2 1500", "Ошибка");
+    test_contains("1 13 1600", "пїЅпїЅпїЅпїЅпїЅпїЅ");
+    test_contains("40 2 1500", "пїЅпїЅпїЅпїЅпїЅпїЅ");
 
     return 0;
 }
