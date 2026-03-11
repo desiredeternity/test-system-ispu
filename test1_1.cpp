@@ -1,91 +1,89 @@
 #include "iotest.hpp"
 #include <iostream>
 
-using namespace std;
+void test1(std::string input, std::string expected) {
+    std::string result = run_with_input(input);
 
-void test1(string input, string expected) {
-    string result = run_with_input(input);
-
-    if (result.find("зел") != string::npos && result.find("крыс") != string::npos) {
-        cout << "Тест: " << "ПРОЙДЕН\n";
+    if (result.find("зел") != std::string::npos && result.find("крыс") != std::string::npos) {
+        std::cout << "Тест: " << "ПРОЙДЕН\n";
     }
     else {
-        cout << "Тест: " << "ОШИБКА: ";
-        cout << "ожидалось \'" << expected << "\', ";
-        cout << "получено \'" << result << "\', ";
-        cout << "введено \'" << input << "\'\n";
+        std::cout << "Тест: " << "ОШИБКА: ";
+        std::cout << "ожидалось \'" << expected << "\', ";
+        std::cout << "получено \'" << result << "\', ";
+        std::cout << "введено \'" << input << "\'\n";
     }
 }
 
-void test2(string input, string expected) {
-    string result = run_with_input(input);
+void test2(std::string input, std::string expected) {
+    std::string result = run_with_input(input);
 
-    if (result.find("бел") != string::npos && result.find("зме") != string::npos) {
-        cout << "Тест: " << "ПРОЙДЕН\n";
+    if (result.find("бел") != std::string::npos && result.find("зме") != std::string::npos) {
+        std::cout << "Тест: " << "ПРОЙДЕН\n";
     }
     else {
-        cout << "Тест: " << "ОШИБКА: ";
-        cout << "ожидалось \'" << expected << "\', ";
-        cout << "получено \'" << result << "\', ";
-        cout << "введено \'" << input << "\'\n";
+        std::cout << "Тест: " << "ОШИБКА: ";
+        std::cout << "ожидалось \'" << expected << "\', ";
+        std::cout << "получено \'" << result << "\', ";
+        std::cout << "введено \'" << input << "\'\n";
     }
 }
 
-void test3(string input, string expected) {
-    string result = run_with_input(input);
+void test3(std::string input, std::string expected) {
+    std::string result = run_with_input(input);
 
-    if ((result.find("жел") != string::npos || result.find("жёл") != string::npos)
-      && result.find("крыс") != string::npos) {
-        cout << "Тест: " << "ПРОЙДЕН\n";
+    if ((result.find("жел") != std::string::npos || result.find("жёл") != std::string::npos)
+      && result.find("крыс") != std::string::npos) {
+        std::cout << "Тест: " << "ПРОЙДЕН\n";
     }
     else {
-        cout << "Тест: " << "ОШИБКА: ";
-        cout << "ожидалось \'" << expected << "\', ";
-        cout << "получено \'" << result << "\', ";
-        cout << "введено \'" << input << "\'\n";
+        std::cout << "Тест: " << "ОШИБКА: ";
+        std::cout << "ожидалось \'" << expected << "\', ";
+        std::cout << "получено \'" << result << "\', ";
+        std::cout << "введено \'" << input << "\'\n";
     }
 }
 
-void test4(string input, string expected) {
-    string result = run_with_input(input);
+void test4(std::string input, std::string expected) {
+    std::string result = run_with_input(input);
 
-    if (result.find("зел") != string::npos && result.find("свин") != string::npos) {
-        cout << "Тест: " << "ПРОЙДЕН\n";
+    if (result.find("зел") != std::string::npos && result.find("свин") != std::string::npos) {
+        std::cout << "Тест: " << "ПРОЙДЕН\n";
     }
     else {
-        cout << "Тест: " << "ОШИБКА: ";
-        cout << "ожидалось \'" << expected << "\', ";
-        cout << "получено \'" << result << "\', ";
-        cout << "введено \'" << input << "\'\n";
+        std::cout << "Тест: " << "ОШИБКА: ";
+        std::cout << "ожидалось \'" << expected << "\', ";
+        std::cout << "получено \'" << result << "\', ";
+        std::cout << "введено \'" << input << "\'\n";
     }
 }
 
-void test5(string input, string expected) {
-    string result = run_with_input(input);
+void test5(std::string input, std::string expected) {
+    std::string result = run_with_input(input);
 
-    if ((result.find("чер") != string::npos || result.find("чёр") != string::npos)
-      && result.find("обез") != string::npos) {
-        cout << "Тест: " << "ПРОЙДЕН\n";
+    if ((result.find("чер") != std::string::npos || result.find("чёр") != std::string::npos)
+      && result.find("обез") != std::string::npos) {
+        std::cout << "Тест: " << "ПРОЙДЕН\n";
     }
     else {
-        cout << "Тест: " << "ОШИБКА: ";
-        cout << "ожидалось \'" << expected << "\', ";
-        cout << "получено \'" << result << "\', ";
-        cout << "введено \'" << input << "\'\n";
+        std::cout << "Тест: " << "ОШИБКА: ";
+        std::cout << "ожидалось \'" << expected << "\', ";
+        std::cout << "получено \'" << result << "\', ";
+        std::cout << "введено \'" << input << "\'\n";
     }
 }
 
-void test6(string input, string expected) {
-    string result = run_with_input(input);
+void test6(std::string input, std::string expected) {
+    std::string result = run_with_input(input);
 
-    if (result.find("зел") != string::npos && result.find("крыс") != string::npos) {
-        cout << "Тест: " << "ПРОЙДЕН\n";
+    if (result.find("зел") != std::string::npos && result.find("крыс") != std::string::npos) {
+        std::cout << "Тест: " << "ПРОЙДЕН\n";
     }
     else {
-        cout << "Тест: " << "ОШИБКА: ";
-        cout << "ожидалось \'" << expected << "\', ";
-        cout << "получено \'" << result << "\', ";
-        cout << "введено \'" << input << "\'\n";
+        std::cout << "Тест: " << "ОШИБКА: ";
+        std::cout << "ожидалось \'" << expected << "\', ";
+        std::cout << "получено \'" << result << "\', ";
+        std::cout << "введено \'" << input << "\'\n";
     }
 }
 
