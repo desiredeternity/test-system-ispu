@@ -20,4 +20,6 @@ void test_num_array(std::string input, std::string expected);
 
 void test_contains(std::string input, std::string expected);
 
+void test_any_match(std::string input, std::vector<std::string> expected_list);
+
 #endif

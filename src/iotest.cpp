@@ -327,3 +327,29 @@ void test_contains(std::string input, std::string expected) { // Тестиро�
         std::cout << "введено \'" << input << "\'\n";
     }
 }
+
+void test_any_match(std::string input, std::vector<std::string> expected_list) { // Тестирование на совпадение с любым из ожидаемых выводов
+    std::string result = run_with_input(input);
+    bool passed = false;
+
+    for (size_t i = 0; i < expected_list.size(); i++) {
+        if (result == expected_list[i]) {
+            passed = true;
+            break;
+        }
+    }
+
+    if (passed) {
+        std::cout << "Тест: " << "ПРОЙДЕН\n";
+    }
+    else {
+        std::cout << "Тест: " << "ОШИБКА: ";
+        std::cout << "ожидалось одно из: ";
+        for (size_t i = 0; i < expected_list.size(); i++) {
+            if (i > 0) std::cout << ", ";
+            std::cout << "\'" << expected_list[i] << "\'";
+        }
+        std::cout << ", получено \'" << result << "\', ";
+        std::cout << "введено \'" << input << "\'\n";
+    }
+}
