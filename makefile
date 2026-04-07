@@ -38,7 +38,7 @@ $(OBJ_DIR)/test%.o: $(TESTS_DIR)/test%.cpp | $(OBJ_DIR)
 
 # Сценарий 2: отдельная компиляция пользовательского кода
 user: $(OBJ_DIR)
-	$(CXX) $(INCLUDES) $(CXXFLAGS) $(SRC_DIR)/user_code.cpp -o user_code.out
+	$(CXX) $(INCLUDES) $(CXXFLAGS) $(SRC_DIR)/user_code.cpp $(SRC_DIR)/Windows.cpp $(SRC_DIR)/msvc_compat.cpp -o user_code.out
 	@./user_code.out
 
 # Компиляция объектных файлов
