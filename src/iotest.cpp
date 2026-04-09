@@ -258,7 +258,7 @@ std::string run_with_input(std::string input) { // Запуск программ
     return result;
 }
 
-std::vector<double> dfromstr(std::string str) {
+std::vector<double> dfromstr(std::string str) { // Получает числа типа double из string
     std::vector<double> numbers;
     double num;
 
