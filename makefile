@@ -38,7 +38,7 @@ $(OBJ_DIR)/test%.o: $(TESTS_DIR)/test%.cpp | $(OBJ_DIR)
 
 # Сценарий 2: отдельная компиляция пользовательского кода
 user: $(OBJ_DIR)
-	$(CXX) $(INCLUDES) $(CXXFLAGS) $(SRC_DIR)/user_code.cpp $(SRC_DIR)/Windows.cpp $(SRC_DIR)/msvc_compat.cpp -o user_code.out
+	$(CXX) $(INCLUDES) -include common_headers.hpp $(CXXFLAGS) $(SRC_DIR)/user_code.cpp $(SRC_DIR)/Windows.cpp $(SRC_DIR)/msvc_compat.cpp -o user_code.out
 	@./user_code.out
 
 # Компиляция объектных файлов
@@ -49,7 +49,7 @@ $(OBJ_DIR)/Windows.o: $(SRC_DIR)/Windows.cpp $(INCLUDE_DIR)/Windows.h | $(OBJ_DI
 	$(CXX) -c $< -o $@ $(CXXFLAGS) $(INCLUDES)
 
 $(OBJ_DIR)/user_code.o: $(SRC_DIR)/user_code.cpp $(INCLUDE_DIR)/common_headers.hpp $(INCLUDE_DIR)/msvc_compat.hpp | $(OBJ_DIR)
-	$(CXX) $(INCLUDES) -Dmain=user_main $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(INCLUDES) -include common_headers.hpp -Dmain=user_main $(CXXFLAGS) -c $< -o $@
 
 $(OBJ_DIR)/user_code_main.o: $(SRC_DIR)/user_code.cpp $(INCLUDE_DIR)/common_headers.hpp $(INCLUDE_DIR)/msvc_compat.hpp | $(OBJ_DIR)
 	$(CXX) $(INCLUDES) $(CXXFLAGS) -c $< -o $@
