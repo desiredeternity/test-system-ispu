@@ -6,3 +6,4 @@
 #include <cstdlib>
 #include <cstdio>
 #include <ctime>
+#include "msvc_compat.hpp"
