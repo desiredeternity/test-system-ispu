@@ -49,7 +49,7 @@ $(OBJ_DIR)/Windows.o: $(SRC_DIR)/Windows.cpp $(INCLUDE_DIR)/Windows.h | $(OBJ_DI
 	$(CXX) -c $< -o $@ $(CXXFLAGS) $(INCLUDES)
 
 $(OBJ_DIR)/user_code.o: $(SRC_DIR)/user_code.cpp $(INCLUDE_DIR)/common_headers.hpp $(INCLUDE_DIR)/msvc_compat.hpp | $(OBJ_DIR)
-	$(CXX) $(INCLUDES) -include common_headers.hpp -Dmain=user_main $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(INCLUDES) -include common_headers.hpp -include msvc_compat.hpp -Dmain=user_main $(CXXFLAGS) -c $< -o $@
 
 $(OBJ_DIR)/user_code_main.o: $(SRC_DIR)/user_code.cpp $(INCLUDE_DIR)/common_headers.hpp $(INCLUDE_DIR)/msvc_compat.hpp | $(OBJ_DIR)
 	$(CXX) $(INCLUDES) $(CXXFLAGS) -c $< -o $@
