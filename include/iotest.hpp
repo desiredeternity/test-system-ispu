@@ -14,12 +14,13 @@ std::string run_with_input(std::string input);
 
 std::vector<double> dfromstr(std::string str);
 
-void test_exact(std::string input, std::string expected);
+void test_exact(std::string input, const char* expected);
+void test_exact(std::string input, std::vector<std::string> expected_list);
 
-void test_num_array(std::string input, std::string expected);
+void test_num_array(std::string input, const char* expected);
+void test_num_array(std::string input, std::vector<std::string> expected_list);
 
-void test_contains(std::string input, std::string expected);
-
-void test_any_match(std::string input, std::vector<std::string> expected_list);
+void test_contains(std::string input, const char* expected);
+void test_contains(std::string input, std::vector<std::string> expected_list);
 
 #endif
