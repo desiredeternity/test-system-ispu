@@ -258,16 +258,19 @@ std::string run_with_input(std::string input) { // Запуск программ
     return result;
 }
 
-std::vector<double> dfromstr(std::string str) { // Получает числа типа double из string
+std::vector<double> dfromstr(std::string str) { // Парсинг чисел double из string
     std::vector<double> numbers;
-    double num;
-
     std::stringstream ss(str);
-
-    while (ss >> num) {
-        numbers.push_back(num);
+    std::string token;
+    
+    while (ss >> token) {
+        char* end;
+        double num = std::strtod(token.c_str(), &end);
+        if (end != token.c_str()) {
+            numbers.push_back(num);
+        }
     }
-
+    
     return numbers;
 }
 
