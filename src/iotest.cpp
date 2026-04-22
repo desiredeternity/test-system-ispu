@@ -308,7 +308,7 @@ void test_exact(std::string input, std::vector<std::string> expected_list) { // 
         std::cout << "Тест: " << "ОШИБКА: ";
         std::cout << "ожидалось одно из: ";
         for (size_t i = 0; i < expected_list.size(); i++) {
-            if (i > 0) std::cout << ", ";
+            if (i > 0) std::cout << " или ";
             std::cout << "\'" << expected_list[i] << "\'";
         }
         std::cout << ", получено \'" << result << "\', ";
@@ -362,7 +362,7 @@ void test_num_array(std::string input, std::vector<std::string> expected_list) {
         std::cout << "Тест: " << "ОШИБКА: ";
         std::cout << "ожидалось одно из: ";
         for (size_t i = 0; i < expected_list.size(); i++) {
-            if (i > 0) std::cout << ", ";
+            if (i > 0) std::cout << " или ";
             std::cout << "\'";
             std::cout << expected_list[i];
             std::cout << "\'";
@@ -403,9 +403,9 @@ void test_contains(std::string input, std::vector<std::string> expected_list) { 
     }
     else {
         std::cout << "Тест: " << "ОШИБКА: ";
-        std::cout << "ожидалась одна из подстрок: ";
+        std::cout << "ожидалась одно из: ";
         for (size_t i = 0; i < expected_list.size(); i++) {
-            if (i > 0) std::cout << ", ";
+            if (i > 0) std::cout << " или ";
             std::cout << "\'" << expected_list[i] << "\'";
         }
         std::cout << ", получено \'" << result << "\', ";
