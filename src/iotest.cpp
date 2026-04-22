@@ -250,7 +250,9 @@ std::string run_with_input(std::string input) { // Запуск программ
     if (!result.empty()) {
         result = utf8(result);
         
-        if (!result.empty() && (result.back() == '\n' || result.back() == ' ')) {
+        std::replace(result.begin(), result.end(), '\n', ' ');
+        
+        while (!result.empty() && result.back() == ' ') {
             result.pop_back();
         }
     }
@@ -327,18 +329,8 @@ void test_num_array(std::string input, const char* expected) { // Тестиро
     }
     else {
         std::cout << "Тест: " << "ОШИБКА: ";
-        std::cout << "ожидалось \'";
-        for (size_t i = 0; i < num_expected.size(); i++) {
-            if (i > 0) std::cout << " ";
-            std::cout << num_expected[i];
-        }
-        std::cout <<"\', ";
-        std::cout << "получено \'";
-        for (size_t i = 0; i < num_result.size(); i++) {
-            if (i > 0) std::cout << " ";
-            std::cout << num_result[i];
-        }
-        std::cout <<"\', ";
+        std::cout << "ожидалось \'" << expected << "\', ";
+        std::cout << "получено \'" << result << "\', ";
         std::cout << "введено \'" << input << "\'\n";
     }
 }
@@ -372,18 +364,10 @@ void test_num_array(std::string input, std::vector<std::string> expected_list) {
         for (size_t i = 0; i < expected_list.size(); i++) {
             if (i > 0) std::cout << ", ";
             std::cout << "\'";
-            for (size_t j = 0; j < num_expected[i].size(); j++) {
-                if (j > 0) std::cout << " ";
-                std::cout << num_expected[i][j];
-            }
+            std::cout << expected_list[i];
             std::cout << "\'";
         }
-        std::cout << ", получено \'";
-        for (size_t i = 0; i < num_result.size(); i++) {
-            if (i > 0) std::cout << " ";
-            std::cout << num_result[i];
-        }
-        std::cout << "\', ";
+        std::cout << ", получено \'" << result << "\', ";
         std::cout << "введено \'" << input << "\'\n";
     }
 }
