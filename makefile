@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -w -std=c++11
+CXXFLAGS = -w -std=c++17
 INCLUDES = -Iinclude
 
 # Пути к исходникам и объектным файлам
