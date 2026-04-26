@@ -316,7 +316,7 @@ void test_exact(std::string input, std::vector<std::string> expected_list) { // 
     }
 }
 
-void test_num_array(std::string input, const char* expected, bool ignore_order) { // Тестирование на наличие необходимых чисел в выводе программы, порядок не важен
+void test_num_array(std::string input, const char* expected, bool ignore_order) { // Тестирование на наличие необходимых чисел в выводе программы, сохранение порядка может быть выбрано
     std::string result = run_with_input(input);
     std::vector<double> num_result = dfromstr(result);
     std::vector<double> num_expected = dfromstr(expected);
@@ -337,7 +337,7 @@ void test_num_array(std::string input, const char* expected, bool ignore_order) 
     }
 }
 
-void test_num_array(std::string input, std::vector<std::string> expected_list, bool ignore_order) { // Тестирование на наличие необходимых чисел в выводе программы, порядок не важен, несколько возможных вариантов
+void test_num_array(std::string input, std::vector<std::string> expected_list, bool ignore_order) { // Тестирование на наличие необходимых чисел в выводе программы, сохранение порядка может быть выбрано, несколько возможных вариантов
     std::string result = run_with_input(input);
     std::vector<double> num_result = dfromstr(result);
 
