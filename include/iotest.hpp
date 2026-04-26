@@ -6,6 +6,9 @@
 #include <string>
 #include <vector>
 
+constexpr bool IGNORE_ORDER = true;
+constexpr bool KEEP_ORDER = false;
+
 std::string utf8(std::string cp1251_str);
 
 std::string cp1251(std::string utf8_str);
@@ -17,8 +20,8 @@ std::vector<double> dfromstr(std::string str);
 void test_exact(std::string input, const char* expected);
 void test_exact(std::string input, std::vector<std::string> expected_list);
 
-void test_num_array(std::string input, const char* expected);
-void test_num_array(std::string input, std::vector<std::string> expected_list);
+void test_num_array(std::string input, const char* expected, bool ignore_order = true);
+void test_num_array(std::string input, std::vector<std::string> expected_list, bool ignore_order = true);
 
 void test_contains(std::string input, const char* expected);
 void test_contains(std::string input, std::vector<std::string> expected_list);

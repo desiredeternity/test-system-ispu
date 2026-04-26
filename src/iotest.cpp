@@ -316,13 +316,15 @@ void test_exact(std::string input, std::vector<std::string> expected_list) { // 
     }
 }
 
-void test_num_array(std::string input, const char* expected) { // Тестирование на наличие необходимых чисел в выводе программы, порядок не важен
+void test_num_array(std::string input, const char* expected, bool ignore_order) { // Тестирование на наличие необходимых чисел в выводе программы, порядок не важен
     std::string result = run_with_input(input);
     std::vector<double> num_result = dfromstr(result);
     std::vector<double> num_expected = dfromstr(expected);
 
-    std::sort(num_result.begin(), num_result.end());
-    std::sort(num_expected.begin(), num_expected.end());
+    if (ignore_order) {
+        std::sort(num_result.begin(), num_result.end());
+        std::sort(num_expected.begin(), num_expected.end());
+    }
 
     if (num_result == num_expected) {
         std::cout << "Тест: " << "ПРОЙДЕН\n";
@@ -335,15 +337,20 @@ void test_num_array(std::string input, const char* expected) { // Тестиро
     }
 }
 
-void test_num_array(std::string input, std::vector<std::string> expected_list) { // Тестирование на наличие необходимых чисел в выводе программы, порядок не важен, несколько возможных вариантов
+void test_num_array(std::string input, std::vector<std::string> expected_list, bool ignore_order) { // Тестирование на наличие необходимых чисел в выводе программы, порядок не важен, несколько возможных вариантов
     std::string result = run_with_input(input);
     std::vector<double> num_result = dfromstr(result);
-    std::sort(num_result.begin(), num_result.end());
+
+    if (ignore_order) {
+        std::sort(num_result.begin(), num_result.end());
+    }
     
     std::vector<std::vector<double>> num_expected;
     for (size_t i = 0; i < expected_list.size(); i++) {
         std::vector<double> parsed_expected = dfromstr(expected_list[i]);
-        std::sort(parsed_expected.begin(), parsed_expected.end());
+        if (ignore_order) {
+            std::sort(parsed_expected.begin(), parsed_expected.end());
+        }
         num_expected.push_back(parsed_expected);
     }
 
