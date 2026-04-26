@@ -262,13 +262,25 @@ std::string run_with_input(std::string input) { // Запуск программ
 
 std::vector<double> dfromstr(std::string str) { // Парсинг чисел double из string
     std::vector<double> numbers;
-    std::stringstream ss(str);
-    std::string token;
+    std::string current_num;
     
-    while (ss >> token) {
+    for (char ch : str) {
+        if (std::isdigit(ch) || ch == '.' || ch == '-' || ch == '+') {
+            current_num += ch;
+        } else if (!current_num.empty()) {
+            char* end;
+            double num = std::strtod(current_num.c_str(), &end);
+            if (end != current_num.c_str()) {
+                numbers.push_back(num);
+            }
+            current_num.clear();
+        }
+    }
+    
+    if (!current_num.empty()) {
         char* end;
-        double num = std::strtod(token.c_str(), &end);
-        if (end != token.c_str()) {
+        double num = std::strtod(current_num.c_str(), &end);
+        if (end != current_num.c_str()) {
             numbers.push_back(num);
         }
     }
