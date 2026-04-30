@@ -7,8 +7,7 @@
 #include <vector>
 #include <map>
 
-#define BUFFER_SIZE 1024
-
+constexpr size_t BUFFER_SIZE = 1024;
 constexpr const char* PASSED = "ПРОЙДЕН";
 constexpr const char* ERROR = "ОШИБКА";
 constexpr const char* WARNING = "ПРЕДУПРЕЖДЕНИЕ"; 
@@ -16,7 +15,7 @@ constexpr const char* WARNING = "ПРЕДУПРЕЖДЕНИЕ";
 extern int user_main();
 
 std::string utf8(std::string cp1251_str) { // Конвертация Windows1251 в UTF8
-    std::map<unsigned char, char*> cp1251_map = {
+    std::map<unsigned char, const char*> cp1251_map = {
         {0xC0, "А"}, {0xC1, "Б"}, {0xC2, "В"}, {0xC3, "Г"}, {0xC4, "Д"},
         {0xC5, "Е"}, {0xC6, "Ж"}, {0xC7, "З"}, {0xC8, "И"}, {0xC9, "Й"},
         {0xCA, "К"}, {0xCB, "Л"}, {0xCC, "М"}, {0xCD, "Н"}, {0xCE, "О"},
