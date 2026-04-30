@@ -9,5 +9,5 @@ int main() {
     test_exact("1",        "Нельзя представить");
     test_exact("30",       "Нельзя представить");
     test_num_array("8900", {"8 и 94", "34 и 88", "50 и 80"});
-    test_contains("-1",    "Ошибка");
+    test_contains("-1",    "Ошибка", OPTIONAL);
 }

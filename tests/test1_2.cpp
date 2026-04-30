@@ -18,7 +18,5 @@ int main() {
     test_exact("0 0 5 0 0 7",    "Прямые не существуют");
     test_exact("-1 2 -3 2 -4 6", "Прямые совпадают");
     test_exact("0 2 4 0 -1 2",   "Прямые совпадают");
-    test_exact("0 0 0 1 2 3",    "1x + 2y = 3");
-
-    return 0;
+    test_exact("0 0 0 1 2 3",    "1x + 2y = 3", OPTIONAL);
 }

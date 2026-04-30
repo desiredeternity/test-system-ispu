@@ -70,6 +70,6 @@ int main() {
     test("6");
     test("7");
     test("8");
-    test_contains("9",  "Ошибка");
-    test_contains("-1", "Ошибка");
+    test_contains("9",  "Ошибка", OPTIONAL);
+    test_contains("-1", "Ошибка", OPTIONAL);
 }

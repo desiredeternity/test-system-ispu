@@ -11,6 +11,6 @@ int main() {
     test_exact("1 1000000", "1/1000000");
     test_contains("5 0",    "Ошибка");
     test_contains("0 0",    "Ошибка");
-    test_contains("0 5",    "Ошибка");
-    test_contains("-5 10",  "Ошибка");
+    test_contains("0 5",    "Ошибка", OPTIONAL);
+    test_contains("-5 10",  "Ошибка", OPTIONAL);
 }

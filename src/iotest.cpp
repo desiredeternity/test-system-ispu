@@ -9,6 +9,10 @@
 
 #define BUFFER_SIZE 1024
 
+constexpr const char* PASSED = "ПРОЙДЕН";
+constexpr const char* ERROR = "ОШИБКА";
+constexpr const char* WARNING = "ПРЕДУПРЕЖДЕНИЕ"; 
+
 extern int user_main();
 
 std::string utf8(std::string cp1251_str) { // Конвертация Windows1251 в UTF8
@@ -288,21 +292,21 @@ std::vector<double> dfromstr(std::string str) { // Парсинг чисел dou
     return numbers;
 }
 
-void test_exact(std::string input, const char* expected) { // Тестирование на полное сходство ожидаемого и реального вывода программы
+void test_exact(std::string input, const char* expected, bool is_required) { // Тестирование на полное сходство ожидаемого и реального вывода программы
     std::string result = run_with_input(input);
 
     if (result == expected) {
-        std::cout << "Тест: " << "ПРОЙДЕН\n";
+        std::cout << "Тест: " << PASSED << "\n";
     }
     else {
-        std::cout << "Тест: " << "ОШИБКА: ";
-        std::cout << "ожидалось \'" << expected << "\', ";
-        std::cout << "получено \'" << result << "\', ";
-        std::cout << "введено \'" << input << "\'\n";
+        std::cout << "Тест: " << (is_required ? ERROR : WARNING) <<": ";
+        std::cout << "ожидалось '" << expected << "', ";
+        std::cout << "получено '" << result << "', ";
+        std::cout << "введено '" << input << "'\n";
     }
 }
 
-void test_exact(std::string input, std::vector<std::string> expected_list) { // Тестирование на полное сходство ожидаемого и реального вывода программы, несколько возможных вариантов
+void test_exact(std::string input, std::vector<std::string> expected_list, bool is_required) { // Тестирование на полное сходство ожидаемого и реального вывода программы, несколько возможных вариантов
     std::string result = run_with_input(input);
     
     bool passed = false;
@@ -314,21 +318,21 @@ void test_exact(std::string input, std::vector<std::string> expected_list) { // 
     }
 
     if (passed) {
-        std::cout << "Тест: " << "ПРОЙДЕН\n";
+        std::cout << "Тест: " << PASSED << "\n";
     }
     else {
-        std::cout << "Тест: " << "ОШИБКА: ";
+        std::cout << "Тест: " << (is_required ? ERROR : WARNING) <<": ";
         std::cout << "ожидалось одно из: ";
         for (size_t i = 0; i < expected_list.size(); i++) {
             if (i > 0) std::cout << " или ";
-            std::cout << "\'" << expected_list[i] << "\'";
+            std::cout << "'" << expected_list[i] << "'";
         }
-        std::cout << ", получено \'" << result << "\', ";
-        std::cout << "введено \'" << input << "\'\n";
+        std::cout << ", получено '" << result << "', ";
+        std::cout << "введено '" << input << "'\n";
     }
 }
 
-void test_num_array(std::string input, const char* expected, bool ignore_order) { // Тестирование на наличие необходимых чисел в выводе программы, сохранение порядка может быть выбрано
+void test_num_array(std::string input, const char* expected, bool ignore_order, bool is_required) { // Тестирование на наличие необходимых чисел в выводе программы, сохранение порядка может быть выбрано
     std::string result = run_with_input(input);
     std::vector<double> num_result = dfromstr(result);
     std::vector<double> num_expected = dfromstr(expected);
@@ -339,17 +343,17 @@ void test_num_array(std::string input, const char* expected, bool ignore_order) 
     }
 
     if (num_result == num_expected) {
-        std::cout << "Тест: " << "ПРОЙДЕН\n";
+        std::cout << "Тест: " << PASSED << "\n";
     }
     else {
-        std::cout << "Тест: " << "ОШИБКА: ";
-        std::cout << "ожидалось \'" << expected << "\', ";
-        std::cout << "получено \'" << result << "\', ";
-        std::cout << "введено \'" << input << "\'\n";
+        std::cout << "Тест: " << (is_required ? ERROR : WARNING) <<": ";
+        std::cout << "ожидалось '" << expected << "', ";
+        std::cout << "получено '" << result << "', ";
+        std::cout << "введено '" << input << "'\n";
     }
 }
 
-void test_num_array(std::string input, std::vector<std::string> expected_list, bool ignore_order) { // Тестирование на наличие необходимых чисел в выводе программы, сохранение порядка может быть выбрано, несколько возможных вариантов
+void test_num_array(std::string input, std::vector<std::string> expected_list, bool ignore_order, bool is_required) { // Тестирование на наличие необходимых чисел в выводе программы, сохранение порядка может быть выбрано, несколько возможных вариантов
     std::string result = run_with_input(input);
     std::vector<double> num_result = dfromstr(result);
 
@@ -375,37 +379,37 @@ void test_num_array(std::string input, std::vector<std::string> expected_list, b
     }
     
     if (passed) {
-        std::cout << "Тест: " << "ПРОЙДЕН\n";
+        std::cout << "Тест: " << PASSED << "\n";
     }
     else {
-        std::cout << "Тест: " << "ОШИБКА: ";
+        std::cout << "Тест: " << (is_required ? ERROR : WARNING) <<": ";
         std::cout << "ожидалось одно из: ";
         for (size_t i = 0; i < expected_list.size(); i++) {
             if (i > 0) std::cout << " или ";
-            std::cout << "\'";
+            std::cout << "'";
             std::cout << expected_list[i];
-            std::cout << "\'";
+            std::cout << "'";
         }
-        std::cout << ", получено \'" << result << "\', ";
-        std::cout << "введено \'" << input << "\'\n";
+        std::cout << ", получено '" << result << "', ";
+        std::cout << "введено '" << input << "'\n";
     }
 }
 
-void test_contains(std::string input, const char* expected) { // Тестирование на наличие определённой подстроки в выводе программы
+void test_contains(std::string input, const char* expected, bool is_required) { // Тестирование на наличие определённой подстроки в выводе программы
     std::string result = run_with_input(input);
 
     if (result.find(expected) != std::string::npos) {
-        std::cout << "Тест: " << "ПРОЙДЕН\n";
+        std::cout << "Тест: " << PASSED << "\n";
     }
     else {
-        std::cout << "Тест: " << "ОШИБКА: ";
-        std::cout << "ожидалось \'" << expected << "\', ";
-        std::cout << "получено \'" << result << "\', ";
-        std::cout << "введено \'" << input << "\'\n";
+        std::cout << "Тест: " << (is_required ? ERROR : WARNING) <<": ";
+        std::cout << "ожидалось '" << expected << "', ";
+        std::cout << "получено '" << result << "', ";
+        std::cout << "введено '" << input << "'\n";
     }
 }
 
-void test_contains(std::string input, std::vector<std::string> expected_list) { // Тестирование на наличие хотя бы одной из подстрок в выводе программы
+void test_contains(std::string input, std::vector<std::string> expected_list, bool is_required) { // Тестирование на наличие хотя бы одной из подстрок в выводе программы
     std::string result = run_with_input(input);
     
     bool passed = false;
@@ -418,16 +422,16 @@ void test_contains(std::string input, std::vector<std::string> expected_list) { 
     }
     
     if (passed) {
-        std::cout << "Тест: " << "ПРОЙДЕН\n";
+        std::cout << "Тест: " << PASSED << "\n";
     }
     else {
-        std::cout << "Тест: " << "ОШИБКА: ";
+        std::cout << "Тест: " << (is_required ? ERROR : WARNING) <<": ";
         std::cout << "ожидалась одно из: ";
         for (size_t i = 0; i < expected_list.size(); i++) {
             if (i > 0) std::cout << " или ";
-            std::cout << "\'" << expected_list[i] << "\'";
+            std::cout << "'" << expected_list[i] << "'";
         }
-        std::cout << ", получено \'" << result << "\', ";
-        std::cout << "введено \'" << input << "\'\n";
+        std::cout << ", получено '" << result << "', ";
+        std::cout << "введено '" << input << "'\n";
     }
 }

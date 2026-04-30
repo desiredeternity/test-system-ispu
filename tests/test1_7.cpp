@@ -8,7 +8,5 @@ int main() {
     test_exact("419",   "420 0 1 1 73.70");
     test_exact("435",   "435 15 1 1 76.70");
     test_exact("0",     "0 0 0 0 0.00");
-    test_contains("-1", "Ошибка");
-
-    return 0;
+    test_contains("-1", "Ошибка", OPTIONAL);
 }

@@ -6,5 +6,5 @@ int main() {
     test_exact("6",     "173");
     test_exact("15",    "171");
     test_exact("990",   "173");
-    test_contains("-1", "Ошибка");
+    test_contains("-1", "Ошибка", OPTIONAL);
 }

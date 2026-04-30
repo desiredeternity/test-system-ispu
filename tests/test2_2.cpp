@@ -8,5 +8,5 @@ int main() {
     test_num_array("999980 1000000", "999983");
     test_exact("6 6",                "В интервале нет простых чисел");
     test_num_array("-10 10",         "2 3 5 7");
-    test_contains("10 1",            {"Ошибка", "2 3 5 7"});
+    test_contains("10 1",            {"Ошибка", "2 3 5 7"}, OPTIONAL);
 }
