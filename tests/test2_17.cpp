@@ -9,5 +9,5 @@ int main() {
     test_num_array("84",       "2 3 7");
     test_num_array("6764",     "2 19 89");
     test_num_array("68768758", "2 23 1494973");
-    test_contains("0",         "Ошибка", OPTIONAL);
+    test_contains("0",         "Ошибка");
 }

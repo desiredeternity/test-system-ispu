@@ -11,7 +11,7 @@ int main() {
     test_contains("56000 2.75 20", "1. 21547.89");
     test_contains("56000 2.75 20", "1166971.26");
     test_contains("56000 2.75 20", "37599408.08");
-    test_contains("-10 1 1",       "Ошибка", OPTIONAL);
-    test_contains("1 -10 1",       "Ошибка", OPTIONAL);
-    test_contains("1 1 -10",       "Ошибка", OPTIONAL);
+    test_contains("-10 1 1",       "Ошибка");
+    test_contains("1 -10 1",       "Ошибка");
+    test_contains("1 1 -10",       "Ошибка");
 }

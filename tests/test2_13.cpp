@@ -10,6 +10,6 @@ int main() {
     test_exact("360 840",               "120");
     test_exact("2147483647 2147483646", "1");
     test_exact("999999 333333",         "333333");
-    test_contains("0 0",                "Ошибка", OPTIONAL);
-    test_contains("-5 10",              "Ошибка", OPTIONAL);
+    test_contains("0 0",                "Ошибка");
+    test_contains("-5 10",              "Ошибка");
 }

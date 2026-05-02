@@ -32,5 +32,5 @@ int main() {
     test("23");
     test("79");
     test("1000");
-    test_contains("-5", "Ошибка", OPTIONAL);
+    test_contains("-5", "Ошибка");
 }
