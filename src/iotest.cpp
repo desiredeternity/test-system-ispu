@@ -329,13 +329,13 @@ void test_exact(std::string input, const char* expected) {
     std::string result = run_with_input(input);
 
     if (result == expected) {
-        std::cout << "Тест: " << PASSED << "\n";
+        std::cout << "Тест: " << PASSED << ":\n";
     }
     else {
-        std::cout << "Тест: " << ERROR << ": ";
-        std::cout << "ожидалось '" << expected << "', ";
-        std::cout << "получено '" << result << "', ";
-        std::cout << "введено '" << input << "'\n";
+        std::cout << "Тест: " << ERROR << ":\n";
+        std::cout << "ожидалось: '" << expected << "'\n";
+        std::cout << "получено: '" << result << "'\n";
+        std::cout << "введено: '" << input << "'\n";
     }
 }
 
@@ -355,14 +355,14 @@ void test_exact(std::string input, std::vector<std::string> expected_list) {
         std::cout << "Тест: " << PASSED << "\n";
     }
     else {
-        std::cout << "Тест: " << ERROR << ": ";
+        std::cout << "Тест: " << ERROR << ":\n";
         std::cout << "ожидалось одно из: ";
         for (size_t i = 0; i < expected_list.size(); i++) {
             if (i > 0) std::cout << " или ";
             std::cout << "'" << expected_list[i] << "'";
         }
-        std::cout << ", получено '" << result << "', ";
-        std::cout << "введено '" << input << "'\n";
+        std::cout << "\nполучено: '" << result << "'\n";
+        std::cout << "введено: '" << input << "'\n";
     }
 }
 
@@ -381,10 +381,10 @@ void test_num_array(std::string input, const char* expected, bool ignore_order) 
         std::cout << "Тест: " << PASSED << "\n";
     }
     else {
-        std::cout << "Тест: " << ERROR << ": ";
-        std::cout << "ожидалось '" << expected << "', ";
-        std::cout << "получено '" << result << "', ";
-        std::cout << "введено '" << input << "'\n";
+        std::cout << "Тест: " << ERROR << ":\n";
+        std::cout << "ожидалось: '" << expected << "'\n";
+        std::cout << "получено: '" << result << "'\n";
+        std::cout << "введено: '" << input << "'\n";
     }
 }
 
@@ -418,7 +418,7 @@ void test_num_array(std::string input, std::vector<std::string> expected_list, b
         std::cout << "Тест: " << PASSED << "\n";
     }
     else {
-        std::cout << "Тест: " << ERROR << ": ";
+        std::cout << "Тест: " << ERROR << ":\n";
         std::cout << "ожидалось одно из: ";
         for (size_t i = 0; i < expected_list.size(); i++) {
             if (i > 0) std::cout << " или ";
@@ -426,8 +426,8 @@ void test_num_array(std::string input, std::vector<std::string> expected_list, b
             std::cout << expected_list[i];
             std::cout << "'";
         }
-        std::cout << ", получено '" << result << "', ";
-        std::cout << "введено '" << input << "'\n";
+        std::cout << "\nполучено: '" << result << "'\n";
+        std::cout << "введено: '" << input << "'\n";
     }
 }
 
@@ -439,10 +439,10 @@ void test_contains(std::string input, const char* expected) {
         std::cout << "Тест: " << PASSED << "\n";
     }
     else {
-        std::cout << "Тест: " << ERROR << ": ";
-        std::cout << "ожидалось '" << expected << "', ";
-        std::cout << "получено '" << result << "', ";
-        std::cout << "введено '" << input << "'\n";
+        std::cout << "Тест: " << ERROR << ":\n";
+        std::cout << "ожидалось: '" << expected << "'\n";
+        std::cout << "получено: '" << result << "'\n";
+        std::cout << "введено: '" << input << "'\n";
     }
 }
 
@@ -463,13 +463,13 @@ void test_contains(std::string input, std::vector<std::string> expected_list) {
         std::cout << "Тест: " << PASSED << "\n";
     }
     else {
-        std::cout << "Тест: " << ERROR << ": ";
+        std::cout << "Тест: " << ERROR << ":\n";
         std::cout << "ожидалась одно из: ";
         for (size_t i = 0; i < expected_list.size(); i++) {
             if (i > 0) std::cout << " или ";
             std::cout << "'" << expected_list[i] << "'";
         }
-        std::cout << ", получено '" << result << "', ";
+        std::cout << "\nполучено '" << result << "'\n";
         std::cout << "введено '" << input << "'\n";
     }
 }
