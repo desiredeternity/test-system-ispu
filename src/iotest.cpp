@@ -329,7 +329,7 @@ void test_exact(std::string input, const char* expected) {
     std::string result = run_with_input(input);
 
     if (result == expected) {
-        std::cout << "Тест: " << PASSED << ":\n";
+        std::cout << "Тест: " << PASSED << "\n";
     }
     else {
         std::cout << "Тест: " << ERROR << ":\n";
