@@ -8,9 +8,6 @@
 #include <map>
 
 constexpr size_t BUFFER_SIZE = 1024;
-constexpr const char* PASSED = "ПРОЙДЕН";
-constexpr const char* ERROR = "ОШИБКА";
-constexpr const char* WARNING = "ПРЕДУПРЕЖДЕНИЕ"; 
 
 extern int user_main();
 

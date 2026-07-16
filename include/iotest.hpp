@@ -9,6 +9,10 @@
 constexpr bool IGNORE_ORDER = true;
 constexpr bool KEEP_ORDER = false;
 
+constexpr const char* PASSED = "ПРОЙДЕН";
+constexpr const char* ERROR = "ОШИБКА";
+constexpr const char* WARNING = "ПРЕДУПРЕЖДЕНИЕ"; 
+
 constexpr bool REQUIRED = true;
 constexpr bool OPTIONAL = false;
 
